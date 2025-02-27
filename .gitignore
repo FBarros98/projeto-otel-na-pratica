@@ -1,3 +1,44 @@
 dist/
 tmp/
 local/
+
+# Diretório do Módulo Go
+go.sum
+go.work
+go.work.sum
+
+# Arquivos binários e compilados
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Diretório de builds
+/build/
+/bin/
+/dist/
+
+# Cache do Go
+/pkg/
+/tmp/
+
+# Dados temporários e logs
+*.log
+*.cache
+*.swp
+*.swo
+*.DS_Store
+*.vscode/
+*.idea/
+
+# Cobertura de código
+*.coverprofile
+*.cov
+
+# Arquivos do dep (caso use)
+vendor/
+
+# Arquivos gerados pelo editor
+*.iml
