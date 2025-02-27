@@ -9,25 +9,45 @@ builds:
     main: ./cmd/users
     binary: users
     env:
-      - CGO_ENABLED=0
+      - CGO_ENABLED=1
+    goos:
+      - windows
+    goarch:
+      - amd64
+      
 
   - id: plans
     main: ./cmd/plans
     binary: plans
     env:
-      - CGO_ENABLED=0
+      - CGO_ENABLED=1
+    goos:
+      - windows
+    goarch:
+      - amd64
+      
 
   - id: subscriptions
     main: ./cmd/subscriptions
     binary: subscriptions
     env:
-      - CGO_ENABLED=0
-
+      - CGO_ENABLED=1
+    goos:
+      - windows
+    goarch:
+      - amd64
+      
+    
   - id: payments
     main: ./cmd/payments
     binary: payments
     env:
-      - CGO_ENABLED=0
+      - CGO_ENABLED=1
+    goos:
+      - windows
+    goarch:
+      - amd64
+      
 
 archives:
   - format: binary
