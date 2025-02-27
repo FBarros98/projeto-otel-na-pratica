@@ -4,18 +4,28 @@
 package main
 
 import (
+	"context"
 	"flag"
+	"fmt"
 	"net"
 	"net/http"
 
 	"github.com/dosedetelemetria/projeto-otel-na-pratica/internal/app"
 	"github.com/dosedetelemetria/projeto-otel-na-pratica/internal/config"
+	"github.com/dosedetelemetria/projeto-otel-na-pratica/internal/telemetry"
 	"google.golang.org/grpc"
 )
 
 func main() {
 	configFlag := flag.String("config", "", "path to the config file")
+	otelconfigFlag := flag.String("otel", "otel.yaml", "path to the otel config file")
 	flag.Parse()
+
+	closer, err := telemetry.Setup(context.Background(), *otelconfigFlag)
+	if err != nil {
+		fmt.Printf("Failes to setup telemetry: %v\n", err)
+	}
+	defer closer(context.Background())
 
 	c, _ := config.LoadConfig(*configFlag)
 
