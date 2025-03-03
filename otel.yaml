@@ -18,9 +18,9 @@ tracer_provider:
     - batch:
         exporter:
           otlp:
-            protocol: grpc
+            protocol: http/protobuf
             insecure: true
-            endpoint: http://localhost:4317
+            endpoint: http://localhost:4318
 
 meter_provider:
   readers:
@@ -28,15 +28,15 @@ meter_provider:
         interval: 1000
         exporter:
           otlp:
-            protocol: grpc
+            protocol: http/protobuf
             insecure: true
-            endpoint: http://localhost:4317
+            endpoint: http://localhost:4318
 
 logger_provider:
   processors:
     - batch:
         exporter:
           otlp:
-            protocol: grpc
+            protocol: http/protobuf
             insecure: true
             endpoint: http://localhost:4318

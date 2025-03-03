@@ -23,6 +23,7 @@ func Setup(ctx context.Context, confFlag string) (func(context.Context) error, e
 	if err != nil {
 		return nil, err
 	}
+
 	sdk, err := config.NewSDK(config.WithContext(ctx), config.WithOpenTelemetryConfiguration(*conf))
 	if err != nil {
 		return nil, err
