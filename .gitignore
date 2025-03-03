@@ -2,6 +2,9 @@ dist/
 tmp/
 local/
 
+# Diretório do otel-tui
+otel-tui
+
 # Diretório do Módulo Go
 go.sum
 go.work
